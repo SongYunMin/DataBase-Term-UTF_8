@@ -37,7 +37,8 @@ public class Main extends HttpServlet {
     out.println("</html>");
     out.println("</body>");
 
-    String content = request.getParameter("content");
+    //String content = request.getParameter("content");
+    String content = "아 좆같네";
     // setAttribute("데이터 이름", 넘길 데이터)
     request.setAttribute("content", content);
     ServletContext context = getServletContext();
