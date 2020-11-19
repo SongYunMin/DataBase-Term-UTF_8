@@ -13,6 +13,10 @@
     <title>$Title$</title>
 </head>
 <body>
+<%
+    String content = (String)request.getAttribute("name");
+%>
+<h2><%=content%></h2>
  <form action="Main" method="post">
      아이디 : <input type="text" name="ID"/>
      비밀번호 : <input type="password" name="Passwd"/><br>
