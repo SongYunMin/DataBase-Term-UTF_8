@@ -13,10 +13,10 @@
     <title>$Title$</title>
 </head>
 <body>
-<form action="Main" method="post">
+<form action="RegisterSession" method="post">
     아이디 : <input type="text" name="ID"/>
     비밀번호 : <input type="password" name="Passwd"/><br>
-    <input type="submit" value="로그인"/>
+    <input type="submit" value="회원가입"/>
 </form>
 
 <hr>
