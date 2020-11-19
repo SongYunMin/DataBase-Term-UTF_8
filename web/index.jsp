@@ -6,18 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%--<jsp:setProperty name="beanclass" property="test" value="Test Value"/>--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
     <title>$Title$</title>
 </head>
 <body>
-$END$
-<%
-    String c = (String)request.getAttribute("content");
-%>
-<h2>${c}</h2>
+ <form action="Main" method="post">
+     아이디 : <input type="text" name="ID"/>
+     비밀번호 : <input type="password" name="Passwd"/><br>
+     <input type="submit" value="로그인"/>
+ </form>
 
-
-
+<hr>
+<a href="register.jsp">회원가입</a>
 </body>
 </html>
