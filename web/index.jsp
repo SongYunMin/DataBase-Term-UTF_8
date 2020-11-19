@@ -20,6 +20,8 @@
  </form>
 
 <hr>
-<a href="register.jsp">회원가입</a>
+ <form action="register.jsp">
+     <input type="submit" value="회원가입"/>
+ </form>
 </body>
 </html>
