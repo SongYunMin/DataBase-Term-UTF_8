@@ -1,0 +1,7 @@
+.table {
+    display: table;
+    width: 300%;
+    height: 100px;
+    margin:auto;
+    text-align: center;
+}
