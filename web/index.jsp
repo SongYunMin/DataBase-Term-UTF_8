@@ -11,27 +11,55 @@
 <html>
 <head>
     <title>$Title$</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Bootstrap Simple Login Form</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+            .login-form {
+                width: 340px;
+                margin: 50px auto;
+                font-size: 15px;
+            }
+            .login-form form {
+                margin-bottom: 15px;
+                background: #f7f7f7;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                padding: 30px;
+            }
+            .login-form h2 {
+                margin: 0 0 15px;
+            }
+            .form-control, .btn {
+                min-height: 38px;
+                border-radius: 2px;
+            }
+            .btn {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
 <body>
-
-<form action="IndexServlet" method="post">
-    <%--     아이디 : <input type="text" name="ID"/>--%>
-    <%--     비밀번호 : <input type="password" name="Passwd"/><br>--%>
-    <%--    <input type="submit" value="로그인"/>--%>
-    <%--    TODO : Yunmin - 아래처럼 하는게 좋을거 같은데?--%>
-    <table width="300" border="1">
-        <tr height="40">
-            <td width="120">아이디</td>
-            <td width="180"><input type="text" name="IndexID"></td>
-        </tr>
-        <tr height="40">
-            <td width="120">패스워드</td>
-            <td width="180"><input type="password" name="IndexPW"></td>
-        </tr>
-        <input type="submit" value="로그인">
-    </table>
-</form>
-<hr>
-    <a href="NewAccount.jsp">회원 가입</a>
+<div class="login-form">
+    <form action="IndexServlet" method="post">
+        <h4 class="text-center">UTF-8 명함관리 시스템</h4>
+        <div class="form-group">
+            <input type="text" class="form-control" name="IndexID" placeholder="아이디">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="IndexPW" placeholder="비밀번호">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">로그인</button>
+        </div>
+    </form>
+    <p class="text-center"><a href="NewAccount.jsp">회원가입</a></p>
+</div>
 </body>
 </html>

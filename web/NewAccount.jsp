@@ -8,46 +8,60 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>회원관리 시스템 회원 가입 페이지</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Simple Login Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
-        table{
-            margin: auto;
-            width: 400px;
-            border: 1px solid gray;
-            text-align: center;
+        .login-form {
+            width: 340px;
+            margin: 50px auto;
+            font-size: 15px;
         }
-        .td_title{
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+        .btn {
+            font-size: 15px;
             font-weight: bold;
-            font-size: x-large;
         }
     </style>
 </head>
 <body>
-<form action="NewAccountServlet" method="post">
-    <table border=1>
-        <tr>
-            <td colspan="2" class="td_title">
-                회원가입 페이지
-            </td>
-        </tr>
-        <tr>
-            <td>이름 : </td>
-            <td><input type="text" name="NewAccountName"/></td>
-        </tr>
-        <tr>
-            <td>아이디 : </td>
-            <td><input type="text" name="NewAccountID"/></td>
-        </tr>
-        <tr>
-            <td>비밀번호 : </td>
-            <td><input type="password" name="NewAccountPW"/></td>
-        </tr>
-        <tr>
-            <td>비밀번호 확인 : </td>
-            <td><input type="password" name="NewAccountPW_"/></td>
-        </tr>
-            <input type="submit" value="회원가입"/>
-    </table>
-</form>
+<div class="login-form">
+    <form action="NewAccountServlet" method="post">
+        <h4 class="text-center">회원가입</h4>
+        <div class="form-group">
+            <input type="text" class="form-control" name="NewAccountName" placeholder="이름">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="NewAccountID" placeholder="아이디">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="NewAccountPW" placeholder="비밀번호">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="NewAccountPW_" placeholder="비밀번호 확인">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">회원가입</button>
+        </div>
+    </form>
+    <p class="text-center"><a href="index.jsp">가입취소</a></p>
+</div>
 </body>
 </html>
