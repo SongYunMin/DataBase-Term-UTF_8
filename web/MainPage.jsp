@@ -22,7 +22,12 @@
     <title>님의 명함관리 페이지</title>
 </head>
 <body>
+${session} 님 환영합니다.
 <form action="NewBusinessCard.jsp">
+    <input type="submit" value="명함등록">
+</form>
+
+<form action="LogOutServlet">
     <input type="submit" value="명함등록">
 </form>
 </body>

@@ -1,8 +1,13 @@
 package DTO;
 
 public class IndexDTO {
+    private String userNum;
     private String userID;
     private String userPW;
+
+    public String getUserNum() { return userNum; }
+
+    public void setUserNum(String userNum) { this.userNum = userNum; }
 
     public String getUserID() {
         return userID;

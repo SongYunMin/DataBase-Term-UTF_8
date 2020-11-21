@@ -46,10 +46,10 @@
         <url-pattern>/servlet/AdminServlet</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
         <welcome-file>NewBusinessCard.jsp</welcome-file>
         <welcome-file>main.jsp</welcome-file>
         <welcome-file>register.jsp</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
         <welcome-file>main.jsp</welcome-file>
     </welcome-file-list>
     <mime-mapping>

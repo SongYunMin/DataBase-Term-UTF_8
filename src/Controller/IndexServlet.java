@@ -17,6 +17,8 @@ import java.io.PrintWriter;
 public class IndexServlet extends HttpServlet {
     private IndexDAO dao = new IndexDAO();
     private IndexDTO dto = new IndexDTO();
+    public static String globalUserNum;
+    public static String globalCardNum;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         reqPro(request,response);
@@ -29,6 +31,7 @@ public class IndexServlet extends HttpServlet {
 
     protected void reqPro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        dto.setUserNum(request.getParameter("IndexUserNum"));
         dto.setUserID(request.getParameter("IndexID"));
         dto.setUserPW(request.getParameter("IndexPW"));
 
@@ -40,7 +43,7 @@ public class IndexServlet extends HttpServlet {
             System.out.println("DataBase Error");
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>alert('DataBase Error!!'); " +
+            out.println("<script>alert('아이디와 비밀번호가 일치하지 않습니다.'); " +
                     "location.href='index.jsp';</script>");
             out.flush();
         }else{
@@ -49,6 +52,7 @@ public class IndexServlet extends HttpServlet {
             // Make Session
             HttpSession session = request.getSession();
             session.setAttribute("session", request.getParameter("IndexID"));
+            globalUserNum = dto.getUserNum();
             out.println("<script>alert('로그인 되었습니다.'); " +
                     "location.href='MainPage.jsp';</script>");
             out.flush();

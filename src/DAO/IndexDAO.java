@@ -45,7 +45,10 @@ public class IndexDAO {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         return -1;      // DataBase Error
     }
+
+//    public int UserNumRegister(IndexDTO dto){
+//
+//    }
 }
