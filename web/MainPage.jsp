@@ -28,7 +28,7 @@ ${session} 님 환영합니다.
 </form>
 
 <form action="LogOutServlet">
-    <input type="submit" value="명함등록">
+    <input type="submit" value="로그아웃">
 </form>
 </body>
 </html>
