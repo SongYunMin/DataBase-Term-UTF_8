@@ -18,12 +18,14 @@
         int i=3;
         out.println("i = " + i);
         request.setAttribute("ia", 3);
-    %>
+    %>w
     <br>
     <p>
         i = <%= i %>
     </p>
-    // Extension Language 은 Type 을 적절 하게 변경 함
+<%--    Extension Language 은 Type 을 적절 하게 변경 함--%>
     i = ${ia < 4}
+
+    당신의 아이디는 ${param.id} 패스워드는 ${param.password} 입니다.
 </body>
 </html>

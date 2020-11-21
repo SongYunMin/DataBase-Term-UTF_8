@@ -11,7 +11,6 @@
     <%--     비밀번호 : <input type="password" name="Passwd"/><br>--%>
     <%--    <input type="submit" value="로그인"/>--%>
     <%--    TODO : Yunmin - 아래처럼 하는게 좋을거 같은데?--%>
-
     <table width="300" border="1">
         <tr height="40">
             <td width="120">아이디</td>
