@@ -43,10 +43,11 @@ public class NewBusinessCardDAO {
     }
 
     public int CardNumSelect(NewBusinessCardDTO dto) {
-        String SQL = "SELECT CardNum FROM businesscard;";
+        String SQL = "SELECT CardNum FROM businesscard ORDER BY CardNum;";
         try {
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
+            rs.first();
             while (rs.next()) {
                 NewBusinessCardServlet.globalCardNum = rs.getString("CardNum");
             }
@@ -72,6 +73,9 @@ public class NewBusinessCardDAO {
             pstmt.setString(5, dto.getComDivision());
             pstmt.setString(6, dto.getComPosition());
             pstmt.executeUpdate();
+            int buf = Integer.parseInt(NewBusinessCardServlet.globalCardNum);
+            buf++;
+            NewBusinessCardServlet.globalCardNum = Integer.toString(buf);
             return 1;
         } catch (Exception e) {
             e.printStackTrace();
