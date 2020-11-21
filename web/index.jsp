@@ -35,7 +35,7 @@
 </form>
 
 <hr>
-<form action="register.jsp">
+<form action="joinForm.jsp.jsp">
     <input type="submit" value="회원가입"/>
 </form>
 </body>

@@ -10,16 +10,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>회원가입</title>
 </head>
 <body>
 <form action="RegisterSession" method="post">
-    아이디 : <input type="text" name="ID"/>
-    비밀번호 : <input type="password" name="Passwd"/><br>
+    아이디 : <input type="text" name="RegisterID"/><br>
+    비밀번호 : <input type="password" name="RegisterPassWD"/><br>
+    비밀번호 확인 : <input type="password" name="ReRegisterPassWD"><br>
+    <hr>
     <input type="submit" value="회원가입"/>
 </form>
-
-<hr>
-
 </body>
 </html>
