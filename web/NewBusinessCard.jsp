@@ -23,7 +23,11 @@
     이름 : <input type="text" name="NewBusinessCardCardSignature"><br>
     전화번호 : <input type="text" name="NewBusinessCardCardPhone"><br>
     회사이름 : <input type="text" name="NewBusinessCardComName"><br>
-    회사
+    회사번호 : <input type="text" name="NewBusinessCardComPhone"><br>
+    부서 : <input type="text" name="NewBusinessCardComDivision"><br>
+    직급 : <input type="text" name="NewBusinessCardComPosition"><br>
+    회사주소 : <input type="text" name="NewBusinessCardComAddress"><br>
+    <input type="submit" value="등록">
 </form>
 </body>
 </html>

@@ -22,28 +22,6 @@
     <title>님의 명함관리 페이지</title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>이름</th><th>연락처</th><th>회사</th><td>부서</td>
-    </tr>
-    </thead>
-    <tbody>
-    <%
-        for(int i=0;i<10;i++)
-        {
-    %>
-    <tr>
-        <form action="RegisterSession" method="post">
-            <td>박강민</td><td>010-9700-0725</td><td>회사명</td><td>부서명</td>
-            <td><input type="submit" value="수정"/></td>
-            <td><input type="submit" value="삭제"/></td>
-        </form>
-    </tr>
-    <%
-        }
-    %>>
-    </tbody>
-</table>
+
 </body>
 </html>

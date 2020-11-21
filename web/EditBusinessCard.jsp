@@ -11,6 +11,8 @@
     <title>명함수정페이지</title>
 </head>
 <body>
+<form action="EditBusinessCardServlet" method="post">
 
+</form>
 </body>
 </html>
