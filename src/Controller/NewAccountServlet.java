@@ -42,6 +42,9 @@ public class NewAccountServlet extends HttpServlet {
         request.setAttribute("NewAccountID", newAccountID);
         request.setAttribute("NewAccountPW", newAccountPW);
         request.setAttribute("NewAccountPW_",newAccountPW_);
+        String Test = "Hi I'm Test";
+
+        request.setAttribute("Test",Test);
 
         // !PW Exception Processing
         if(!newAccountPW.equals(newAccountPW_)){

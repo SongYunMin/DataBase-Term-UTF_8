@@ -39,5 +39,4 @@ public class UserInfoDao {
 
         return -1;      // DataBase Error
     }
-
 }

@@ -11,7 +11,6 @@
 <html>
 <head>
     <title>$Title$</title>
-
 </head>
 <body>
 
@@ -30,10 +29,8 @@
             <td width="180"><input type="password" name="password"></td>
         </tr>
         <input type="submit" value="로그인">
-
     </table>
 </form>
-
 <hr>
     <a href="NewAccount.jsp">회원 가입</a>
 </body>
