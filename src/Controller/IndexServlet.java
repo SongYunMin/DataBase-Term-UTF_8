@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 // Annotation Mapping
 @WebServlet("/Main")
-public class Main extends HttpServlet {
+public class IndexServlet extends HttpServlet {
 
-  public Main(){
+  public IndexServlet(){
     super();
   }
 

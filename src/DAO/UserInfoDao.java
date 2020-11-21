@@ -15,7 +15,7 @@ public class UserInfoDao {
     // DataBase Access
     public UserInfoDao() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/BBS?serverTimezone=UTC";
+            String dbURL = "jdbc:mysql://localhost:3306/userinformation?serverTimezone=UTC";
             String dbID = "root";
             String dbPW = "";
             Class.forName("com.mysql.jdbc.Driver");
@@ -26,7 +26,7 @@ public class UserInfoDao {
     }
 
     public int register(UserInfoDto dto){
-        String SQL = "INSERT INTO userinfo(UserName, UserID, UserPW) VALUES(?,?,?)";
+        String SQL = "INSERT INTO userinfo(UserNum, UserName, UserID, UserPW) VALUES(default ,?,?,?)";
         try{
             pstmt=conn.prepareStatement(SQL);
             pstmt.setString(1,dto.getUserName());

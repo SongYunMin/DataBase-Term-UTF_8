@@ -29,6 +29,4 @@ public class UserInfoDto {
     public void setUserPW(String userPW) {
         this.userPW = userPW;
     }
-
-
 }
