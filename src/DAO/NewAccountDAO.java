@@ -1,19 +1,16 @@
 package DAO;
 
-import DTO.UserInfoDto;
+import DTO.NewAccountDTO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
-public class UserInfoDao {
+public class NewAccountDAO {
     private Connection conn;
     private PreparedStatement pstmt;
     private ResultSet rs;
 
     // DataBase Access
-    public UserInfoDao() {
+    public NewAccountDAO() {
         try {
             String dbURL = "jdbc:mysql://localhost:3306/userinformation?serverTimezone=UTC";
             String dbID = "root";
@@ -25,7 +22,15 @@ public class UserInfoDao {
         }
     }
 
-    public int register(UserInfoDto dto){
+    public void close(){
+        try {
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public int register(NewAccountDTO dto){
         String SQL = "INSERT INTO userinfo(UserNum, UserName, UserID, UserPW) VALUES(default ,?,?,?)";
         try{
             pstmt=conn.prepareStatement(SQL);

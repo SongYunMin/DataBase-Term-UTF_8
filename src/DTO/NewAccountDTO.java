@@ -1,6 +1,6 @@
 package DTO;
 
-public class UserInfoDto {
+public class NewAccountDTO {
     private String userName;
     private String userID;
     private String userPW;

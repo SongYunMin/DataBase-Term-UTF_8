@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form action="LoginServlet" method="post">
+<form action="IndexServlet" method="post">
     <%--     아이디 : <input type="text" name="ID"/>--%>
     <%--     비밀번호 : <input type="password" name="Passwd"/><br>--%>
     <%--    <input type="submit" value="로그인"/>--%>
@@ -22,11 +22,11 @@
     <table width="300" border="1">
         <tr height="40">
             <td width="120">아이디</td>
-            <td width="180"><input type="text" name="id"></td>
+            <td width="180"><input type="text" name="IndexID"></td>
         </tr>
         <tr height="40">
             <td width="120">패스워드</td>
-            <td width="180"><input type="password" name="password"></td>
+            <td width="180"><input type="password" name="IndexPW"></td>
         </tr>
         <input type="submit" value="로그인">
     </table>

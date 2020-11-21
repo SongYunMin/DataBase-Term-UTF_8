@@ -36,14 +36,7 @@ public class MainPageServlet extends HttpServlet {
 
   protected void reqPro(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException{
-    String id = request.getParameter("id");
-    String password = request.getParameter("password");
-    System.out.println("id = " + id);
-    System.out.println("password = " + password);
 
-    // Saving Data to a Requested Object
-    request.setAttribute("id", id);
-    request.setAttribute("password", password);
 
     // RequestDispatcher : Send client requests to the desired resource
     // forward : The role of handing control over to the target resource.

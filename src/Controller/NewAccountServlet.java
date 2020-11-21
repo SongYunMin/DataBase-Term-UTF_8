@@ -1,9 +1,8 @@
 package Controller;
 
-import DAO.UserInfoDao;
-import DTO.UserInfoDto;
+import DAO.NewAccountDAO;
+import DTO.NewAccountDTO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +13,8 @@ import java.io.PrintWriter;
 
 @WebServlet("/NewAccountServlet")
 public class NewAccountServlet extends HttpServlet {
-    private UserInfoDao dao = new UserInfoDao();
-    private UserInfoDto dto = new UserInfoDto();
+    private NewAccountDAO dao = new NewAccountDAO();
+    private NewAccountDTO dto = new NewAccountDTO();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         reqPro(request, response);
     }
@@ -53,7 +52,6 @@ public class NewAccountServlet extends HttpServlet {
             out.println("<script>alert('비밀번호와 확인이 서로 일치하지 않습니다.'); " +
                     "location.href='NewAccount.jsp';</script>");
             out.flush();
-            return;
         }else{
             dto.setUserName(request.getParameter("NewAccountName"));
             dto.setUserID(request.getParameter("NewAccountID"));
@@ -64,12 +62,14 @@ public class NewAccountServlet extends HttpServlet {
                 System.out.println("DataBase Error");
                 response.setContentType("text/html; charset=UTF-8");
                 PrintWriter out = response.getWriter();
+                dao.close();
                 out.println("<script>alert('DataBase Error!!'); " +
                         "location.href='NewAccount.jsp';</script>");
                 out.flush();
             }else{
                 response.setContentType("text/html; charset=UTF-8");
                 PrintWriter out = response.getWriter();
+                dao.close();
                 out.println("<script>alert('회원가입이 완료되었습니다!'); " +
                         "location.href='index.jsp';</script>");
                 out.flush();
