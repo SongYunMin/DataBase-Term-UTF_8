@@ -22,6 +22,8 @@
     <title>님의 명함관리 페이지</title>
 </head>
 <body>
-
+<form action="NewBusinessCard.jsp">
+    <input type="submit" value="명함등록">
+</form>
 </body>
 </html>
