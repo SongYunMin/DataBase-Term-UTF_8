@@ -18,7 +18,6 @@ public class IndexServlet extends HttpServlet {
     private IndexDAO dao = new IndexDAO();
     private IndexDTO dto = new IndexDTO();
     public static String globalUserNum;
-    public static String globalCardNum;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         reqPro(request,response);
@@ -31,7 +30,7 @@ public class IndexServlet extends HttpServlet {
 
     protected void reqPro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        dto.setUserNum(request.getParameter("IndexUserNum"));
+        // dto.setUserNum(request.getParameter("IndexUserNum"));
         dto.setUserID(request.getParameter("IndexID"));
         dto.setUserPW(request.getParameter("IndexPW"));
 
@@ -52,7 +51,6 @@ public class IndexServlet extends HttpServlet {
             // Make Session
             HttpSession session = request.getSession();
             session.setAttribute("session", request.getParameter("IndexID"));
-            globalUserNum = dto.getUserNum();
             out.println("<script>alert('로그인 되었습니다.'); " +
                     "location.href='MainPage.jsp';</script>");
             out.flush();

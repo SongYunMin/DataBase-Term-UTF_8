@@ -1,5 +1,6 @@
 package DAO;
 
+import Controller.IndexServlet;
 import DTO.IndexDTO;
 
 import java.sql.*;
@@ -25,7 +26,8 @@ public class IndexDAO {
     }
 
     public int register(IndexDTO dto){
-        String SQL = "SELECT UserID, UserPW FROM userinfo;";
+        String SQL = "SELECT UserNum, UserID, UserPW FROM userinfo;";
+        String bufNum;
         String bufID;
         String bufPW;
         int i = 0;
@@ -36,9 +38,11 @@ public class IndexDAO {
             while(rs.next()){
                 System.out.println("ID : " + rs.getString("UserID") +
                         "PW : " + rs.getString("UserPW"));
+                bufNum = rs.getString("UserNum");
                 bufID = rs.getString("UserID");
                 bufPW = rs.getString("UserPW");
                 if(bufID.equals(dto.getUserID()) && bufPW.equals(dto.getUserPW())){
+                    IndexServlet.globalUserNum = bufNum;
                     return 1;
                 }
             }
@@ -47,8 +51,4 @@ public class IndexDAO {
         }
         return -1;      // DataBase Error
     }
-
-//    public int UserNumRegister(IndexDTO dto){
-//
-//    }
 }

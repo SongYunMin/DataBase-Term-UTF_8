@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 public class NewBusinessCardServlet extends HttpServlet {
     private NewBusinessCardDTO dto = new NewBusinessCardDTO();
     private NewBusinessCardDAO dao = new NewBusinessCardDAO();
+    public static String globalCardNum;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         reqPro(request,response);
@@ -31,7 +32,7 @@ public class NewBusinessCardServlet extends HttpServlet {
         dto.setCardPhone(request.getParameter("NewBusinessCardCardPhone"));
         dto.setComName(request.getParameter("NewBusinessCardComName"));
         dto.setComPhone(request.getParameter("NewBusinessCardComPhone"));
-        dto.setComDivision(request.getParameter("NewBusinessCardDivision"));
+        dto.setComDivision(request.getParameter("NewBusinessCardComDivision"));
         dto.setComPosition(request.getParameter("NewBusinessCardComPosition"));
         dto.setComAddress(request.getParameter("NewBusinessCardComAddress"));
         dto.setUserNum(IndexServlet.globalUserNum);
@@ -44,7 +45,7 @@ public class NewBusinessCardServlet extends HttpServlet {
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<script>alert('DataBase Error!!'); " +
-                    "location.href='NewAccount.jsp';</script>");
+                    "location.href='MainPage.jsp';</script>");
             out.flush();
         }else{
             response.setContentType("text/html; charset=UTF-8");
