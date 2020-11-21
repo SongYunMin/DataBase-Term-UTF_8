@@ -45,6 +45,12 @@
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/servlet/AdminServlet</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>main.jsp</welcome-file>
+        <welcome-file>register.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>main.jsp</welcome-file>
+    </welcome-file-list>
     <mime-mapping>
         <extension>wsdl</extension>
         <mime-type>text/xml</mime-type>
