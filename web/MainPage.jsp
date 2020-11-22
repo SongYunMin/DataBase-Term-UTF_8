@@ -399,7 +399,7 @@
                 <tbody>
                 <tr>
                     <td><%=String.valueOf(cardSignatureList.toArray()[i])%></td>
-                    <td><%=String.valueOf(cardPhoneList.toArray()[i])%>></td>
+                    <td><%=String.valueOf(cardPhoneList.toArray()[i])%></td>
                     <td>
                         <!-- Button HTML (to Trigger Modal) -->
                         <a href="#myModal"  data-toggle="modal"><%=String.valueOf(comNameList.toArray()[i])%></a>
