@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 2020-11-19
@@ -6,16 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%
-    //    String id = (String)session.getAttribute("id");
-//    int CardNum = (int)session.getAttribute("CardNum");
-//    int UserNum = (int)session.getAttribute("UserNum");
-//    String ComName = (String)session.getAttribute("ComName");
-//    String UserName = (String)session.getAttribute("UserName");
-//    String PhoneNum = (String)session.getAttribute("PhoneNum");
-//    String Division = (String)session.getAttribute("Division");
-//    String Position = (String)session.getAttribute("Position");
-//    String email = (String)session.getAttribute("email");
+<%!
+   //List InfoList = (ArrayList)session.getAttribute("");
 %>
 <html lang="en">
 <head>
@@ -402,8 +394,28 @@
                         <a href="#myModal"  data-toggle="modal">${BusinessCardComName}</a>
                     </td>
                     <td>
-                        <a href="EditBusinessCard.jsp" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="DeleteBusinessCardServlet" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <div id="myModal" class="modal fade">
+                            <div class="modal-dialog modal-confirm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="icon-box">
+                                            <i class="material-icons">&#xE876;</i>
+                                        </div>
+                                        <h4 class="modal-title w-100">${BusinessCardComName}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="text-center">${BusinessCardComAddress}</p>
+                                        <p class="text-center">${BusinessCardComDivision}</p>
+                                        <p class="text-center">${BusinessCardComPosition}</p>
+                                        <p class="text-center">${BusinessCardComPhone}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-success btn-block" data-dismiss="modal">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </i></a>
                     </td>
                 </tr>
                 </tbody>
@@ -411,24 +423,3 @@
         </div>
     </div>
 </div>
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-confirm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="icon-box">
-                    <i class="material-icons">&#xE876;</i>
-                </div>
-                <h4 class="modal-title w-100">Awesome!</h4>
-            </div>
-            <div class="modal-body">
-                <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html>
