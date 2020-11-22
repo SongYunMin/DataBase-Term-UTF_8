@@ -1,4 +1,13 @@
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="static DAO.MainPageDAO.cardSignatureList" %>
+<%@ page import="static DAO.MainPageDAO.cardPhoneList" %>
+<%@ page import="static DAO.MainPageDAO.comNameList" %>
+<%@ page import="static DAO.MainPageDAO.comAddressList" %>
+<%@ page import="static DAO.MainPageDAO.comPhoneList" %>
+<%@ page import="static DAO.MainPageDAO.comDivisionList" %>
+<%@ page import="static DAO.MainPageDAO.comPositionList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.StringCharacterIterator" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 2020-11-19
@@ -6,9 +15,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%!
-   //List InfoList = (ArrayList)session.getAttribute("");
-%>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -385,13 +392,17 @@
                     <th>회사이름</th>
                 </tr>
                 </thead>
+                <%
+                    for(int i=0;i<cardSignatureList.toArray().length;i++)
+                    {
+                %>
                 <tbody>
                 <tr>
-                    <td>${BusinessCardCardSignature}</td>
-                    <td>${BusinessCardCardPhone}</td>
+                    <td><%=String.valueOf(cardSignatureList.toArray()[i])%></td>
+                    <td><%=String.valueOf(cardPhoneList.toArray()[i])%>></td>
                     <td>
                         <!-- Button HTML (to Trigger Modal) -->
-                        <a href="#myModal"  data-toggle="modal">${BusinessCardComName}</a>
+                        <a href="#myModal"  data-toggle="modal"><%=String.valueOf(comNameList.toArray()[i])%></a>
                     </td>
                     <td>
                         <div id="myModal" class="modal fade">
@@ -401,13 +412,13 @@
                                         <div class="icon-box">
                                             <i class="material-icons">&#xE876;</i>
                                         </div>
-                                        <h4 class="modal-title w-100">${BusinessCardComName}</h4>
+                                        <h4 class="modal-title w-100"><%=String.valueOf(comNameList.toArray()[i])%></h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p class="text-center">${BusinessCardComAddress}</p>
-                                        <p class="text-center">${BusinessCardComDivision}</p>
-                                        <p class="text-center">${BusinessCardComPosition}</p>
-                                        <p class="text-center">${BusinessCardComPhone}</p>
+                                        <p class="text-center">회사주소 : <%=String.valueOf(comAddressList.toArray()[i])%></p>
+                                        <p class="text-center">회사번호 : <%=String.valueOf(comPhoneList.toArray()[i])%></p>
+                                        <p class="text-center">회사부서 : <%=String.valueOf(comDivisionList.toArray()[i])%></p>
+                                        <p class="text-center">회사직급 : <%=String.valueOf(comPositionList.toArray()[i])%></p>
                                     </div>
                                     <div class="modal-footer">
                                         <button class="btn btn-success btn-block" data-dismiss="modal">확인</button>
@@ -419,6 +430,9 @@
                     </td>
                 </tr>
                 </tbody>
+                <%
+                    }
+                %>
             </table>
         </div>
     </div>
