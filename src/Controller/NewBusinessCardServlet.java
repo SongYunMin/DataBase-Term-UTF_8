@@ -57,8 +57,6 @@ public class NewBusinessCardServlet extends HttpServlet {
 
 //        // Test Code
 
-
-
 //        // RequestDispatcher : Send client requests to the desired resource
 //        // forward : The role of handing control over to the target resource.
 //        RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
