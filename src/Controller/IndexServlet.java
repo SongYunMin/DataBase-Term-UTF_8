@@ -4,6 +4,7 @@ import DAO.IndexDAO;
 import DTO.IndexDTO;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -51,9 +52,11 @@ public class IndexServlet extends HttpServlet {
             // Make Session
             HttpSession session = request.getSession();
             session.setAttribute("session", request.getParameter("IndexID"));
-            out.println("<script>alert('로그인 되었습니다.'); " +
-                    "location.href='MainPage.jsp';</script>");
-            out.flush();
+//            out.println("<script>alert('로그인 되었습니다.');</script>");
+//            out.flush();
         }
+        ServletContext sc = this.getServletContext();
+        RequestDispatcher dis = sc.getRequestDispatcher("/MainPageServlet");
+        dis.forward(request, response);
     }
 }
