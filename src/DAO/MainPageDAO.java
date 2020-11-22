@@ -4,11 +4,20 @@ import Controller.IndexServlet;
 import DTO.NewBusinessCardDTO;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class MainPageDAO {
     private Connection conn;
     private PreparedStatement pstmt;
     private ResultSet rs;
+    // 출력 대상 리스트
+    ArrayList<String> cardSignatureList = new ArrayList<>();
+    ArrayList<String> cardPhoneList = new ArrayList<>();
+    ArrayList<String> comNameList = new ArrayList<>();
+    ArrayList<String> comAddressList = new ArrayList<>();
+    ArrayList<String> comPhoneList = new ArrayList<>();
+    ArrayList<String> comDivisionList = new ArrayList<>();
+    ArrayList<String> comPositionList = new ArrayList<>();
 
     // Database Access
     public MainPageDAO() {
@@ -24,17 +33,34 @@ public class MainPageDAO {
     }
 
     public int register(NewBusinessCardDTO dto) {
-        String SQL = "SELECT cominfo.*, businesscard.CardSignature, businesscard.CardPhone FROM" +
-                "cominfo INNER JOIN businesscard" +
-                "ON cominfo.CardNum = businesscard.CardNum;";
 
+        String SQL = "SELECT cominfo.*, nusinesscard.CardSignature, businesscard.CardPhone FROM" +
+                "cominfo INNER JOIN businesscard" +
+                "ON cominfo.UserNum = businesscard.UserNum;";
 
         try {
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
 
             while (rs.next()) {
-                System.out.println("");
+                /* TEST CODE */
+                System.out.println("-------BUSINESS CARD TABLE-------");
+                System.out.println("CardNum : " + rs.getString("CardNum"));
+                System.out.println("UserNum : " + rs.getString("UserNUm"));
+                System.out.println("CardSignature : " + rs.getString("CardSignature"));
+                System.out.println("CardPhone : " + rs.getString("CardPhone"));
+                System.out.println("-------ComInfo TABLE-------");
+                System.out.println("ComNum : " + rs.getString("CardNum"));
+                System.out.println("ComName : " + rs.getString("ComName"));
+                System.out.println("CardNum : " + rs.getString("CardNum"));
+                System.out.println("ComAddress : " + rs.getString("ComAddress"));
+                System.out.println("ComPhone : " + rs.getString("ComPhone"));
+                System.out.println("ComDivision : " + rs.getString("ComDivision"));
+                System.out.println("ComPosition : " + rs.getString("ComPosition"));
+                System.out.println("UserNum : " + rs.getString("UserNum"));
+                /* END */
+
+
                 return 1;
             }
         } catch(Exception e) {

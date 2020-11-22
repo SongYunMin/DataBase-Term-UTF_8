@@ -23,7 +23,6 @@ public class LogOutServlet extends HttpServlet {
             throws ServletException, IOException{
         HttpSession session = request.getSession();
         session.invalidate();
-
         RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
         dis.forward(request, response);
     }

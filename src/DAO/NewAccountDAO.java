@@ -22,13 +22,13 @@ public class NewAccountDAO {
         }
     }
 
-    public void close(){
-        try {
-            conn.close();
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
+//    public void close(){
+//        try {
+//            conn.close();
+//        }catch (SQLException e){
+//            e.printStackTrace();
+//        }
+//    }
 
     public int register(NewAccountDTO dto){
         String SQL = "INSERT INTO userinfo(UserNum, UserName, UserID, UserPW) VALUES(default ,?,?,?)";

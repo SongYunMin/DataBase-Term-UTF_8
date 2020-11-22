@@ -62,14 +62,12 @@ public class NewAccountServlet extends HttpServlet {
                 System.out.println("DataBase Error");
                 response.setContentType("text/html; charset=UTF-8");
                 PrintWriter out = response.getWriter();
-                dao.close();
                 out.println("<script>alert('DataBase Error!!'); " +
                         "location.href='NewAccount.jsp';</script>");
                 out.flush();
             }else{
                 response.setContentType("text/html; charset=UTF-8");
                 PrintWriter out = response.getWriter();
-                dao.close();
                 out.println("<script>alert('회원가입이 완료되었습니다!'); " +
                         "location.href='index.jsp';</script>");
                 out.flush();

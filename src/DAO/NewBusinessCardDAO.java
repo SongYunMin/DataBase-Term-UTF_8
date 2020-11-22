@@ -62,8 +62,8 @@ public class NewBusinessCardDAO {
 
     public int ComInfo_register(NewBusinessCardDTO dto) {
         String SQL = "INSERT INTO cominfo(ComNum, ComName, CardNum, ComAddress, " +
-                "ComPhone, ComDivision, ComPosition) " +
-                "VALUES(default,?,?,?,?,?,?)";
+                "ComPhone, ComDivision, ComPosition, UserNum) " +
+                "VALUES(default,?,?,?,?,?,?,?)";
         try {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, dto.getComName());
@@ -72,6 +72,7 @@ public class NewBusinessCardDAO {
             pstmt.setString(4, dto.getComPhone());
             pstmt.setString(5, dto.getComDivision());
             pstmt.setString(6, dto.getComPosition());
+            pstmt.setString(7, IndexServlet.globalUserNum);
             pstmt.executeUpdate();
             int buf = Integer.parseInt(NewBusinessCardServlet.globalCardNum);
             buf++;
