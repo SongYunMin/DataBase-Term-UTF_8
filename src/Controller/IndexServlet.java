@@ -35,6 +35,8 @@ public class IndexServlet extends HttpServlet {
         dto.setUserID(request.getParameter("IndexID"));
         dto.setUserPW(request.getParameter("IndexPW"));
 
+
+
         System.out.println("id : " + dto.getUserID());
         System.out.println("PW : " + dto.getUserPW());
 
@@ -52,8 +54,6 @@ public class IndexServlet extends HttpServlet {
             // Make Session
             HttpSession session = request.getSession();
             session.setAttribute("session", request.getParameter("IndexID"));
-//            out.println("<script>alert('로그인 되었습니다.');</script>");
-//            out.flush();
         }
         ServletContext sc = this.getServletContext();
         RequestDispatcher dis = sc.getRequestDispatcher("/MainPageServlet");

@@ -429,11 +429,20 @@
                         </i></a>
                     </td>
                 </tr>
-                </tbody>
+                </tbody>x
                 <%
                     }
                 %>
             </table>
         </div>
     </div>
+
 </div>
+<script>
+    function recluster(){
+        $.ajax({
+            url : 'MainPageServlet',
+            type:'GET'
+        })
+    }
+</script>
